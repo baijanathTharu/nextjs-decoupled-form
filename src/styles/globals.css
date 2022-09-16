@@ -47,6 +47,8 @@ h2 {
 .form-field {
   width: 100%;
   color: var(--text-clr);
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 .form-field input {
@@ -57,12 +59,14 @@ h2 {
 }
 
 .form-field button {
+  margin-top: 0.5rem;
   padding: 0.7rem;
   width: 8rem;
   background-color: var(--bg-clr);
   outline: none;
   color: #fff;
   border: 2px solid #fff;
+  font-size: 1.2rem;
 }
 
 .form-field button:hover {

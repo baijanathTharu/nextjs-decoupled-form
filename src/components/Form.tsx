@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 type FormData = {
   firstName: string;
   lastName: string;
+  age: number;
 };
 
 export default function FormComponent() {
@@ -25,14 +26,11 @@ export default function FormComponent() {
         <input {...register('lastName')} />
       </div>
       <div className='form-field'>
-        <button
-          type='button'
-          onClick={() => {
-            setValue('lastName', 'luo');
-          }}
-        >
-          SetValue
-        </button>
+        <label>Age</label>
+        <input type='number' {...register('age')} />
+      </div>
+      <div className='form-field'>
+        <button type='submit'>Submit</button>
       </div>
     </form>
   );

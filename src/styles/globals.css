@@ -2,6 +2,8 @@
   --text-clr: #56bc58;
   --bg-clr: #000;
   --btn-hover-bg-clr: rgb(22, 21, 21);
+  --clr-white: rgb(238, 238, 238);
+  --clr-error: rgb(201, 40, 40);
 }
 
 html,
@@ -40,7 +42,7 @@ h2 {
 
 .form {
   margin: 2rem 0;
-  border: 2px solid #fff;
+  border: 2px solid var(--clr-white);
   padding: 2rem;
 }
 
@@ -54,8 +56,11 @@ h2 {
 .form-field input {
   height: 2.5rem;
   padding: 0.5rem;
-  margin: 1rem 0;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
   width: 100%;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 .form-field button {
@@ -64,12 +69,19 @@ h2 {
   width: 8rem;
   background-color: var(--bg-clr);
   outline: none;
-  color: #fff;
-  border: 2px solid #fff;
+  color: var(--clr-white);
+  border: 2px solid var(--clr-white);
   font-size: 1.2rem;
 }
 
 .form-field button:hover {
   background-color: var(--btn-hover-bg-clr);
   cursor: pointer;
+}
+
+.form-error-container {
+  padding-top: 0.2rem;
+  padding-bottom: 0.5rem;
+  color: var(--clr-error);
+  font-size: 0.9rem;
 }

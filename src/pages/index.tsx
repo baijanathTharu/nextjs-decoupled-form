@@ -1,4 +1,4 @@
-import FormComponent from '../components/Form';
+import FormComponent from '../features/form/form.component';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {

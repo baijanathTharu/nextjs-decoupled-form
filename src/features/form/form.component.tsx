@@ -1,28 +1,31 @@
-import * as yup from 'yup';
+import {
+  TFormValues,
+  formReducer,
+  formSchema,
+  initialFormFields,
+} from './form.reducer';
 
 import { useForm } from 'react-hook-form';
+import { useReducer } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const schema = yup
-  .object({
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
-    age: yup.number().positive().integer().required(),
-  })
-  .required();
-
-type FormData = yup.InferType<typeof schema>;
-
 export default function FormComponent() {
+  const [formFields, dispatch] = useReducer(formReducer, initialFormFields);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({
-    resolver: yupResolver(schema),
+  } = useForm<TFormValues>({
+    resolver: yupResolver(formSchema),
   });
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit((data) => {
+    dispatch({
+      type: 'submit',
+      payload: { data },
+    });
+  });
 
   return (
     <form onSubmit={onSubmit} className='form'>
